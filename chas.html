@@ -19,8 +19,9 @@
             background: #eef7f0;
             color: #163d2b;
         }
+        /* NAV */
         
-        header {
+        nav {
             display: flex;
             justify-content: space-between;
             padding: 20px 60px;
@@ -28,31 +29,42 @@
             color: white;
         }
         
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        /* HERO */
+        
         .hero {
             padding: 60px;
             text-align: center;
             background: linear-gradient(135deg, #2e7d32, #66bb6a);
             color: white;
         }
+        /* GRID */
         
-        .menu {
-            max-width: 900px;
-            margin: 50px auto;
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+            justify-content: center;
         }
         
         .item {
-            display: flex;
-            justify-content: space-between;
-            padding: 18px;
-            margin-bottom: 10px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
         .preco {
             color: #2e7d32;
             font-weight: 600;
+            margin-top: 10px;
         }
         
         footer {
@@ -66,30 +78,54 @@
 
 <body>
 
-    <header>
+    <nav>
         <h2 onclick="location.href='index.html'" style="cursor:pointer;">🌿 EcoViva</h2>
-    </header>
+        <div>
+            <a href="chas.html">Chás</a>
+            <a href="graos.html">Grãos</a>
+            <a href="oleos.html">Óleos</a>
+        </div>
+    </nav>
 
     <section class="hero">
         <h1>Chás Naturais</h1>
-        <p>Seleção premium para relaxamento e saúde</p>
     </section>
 
-    <div class="menu">
-        <div class="item"><span>Camomila</span><span class="preco">R$ 12,90</span></div>
-        <div class="item"><span>Hortelã</span><span class="preco">R$ 11,90</span></div>
-        <div class="item"><span>Hibisco</span><span class="preco">R$ 13,90</span></div>
-        <div class="item"><span>Chá Verde</span><span class="preco">R$ 14,90</span></div>
-        <div class="item"><span>Erva-doce</span><span class="preco">R$ 10,90</span></div>
-        <div class="item"><span>Capim-limão</span><span class="preco">R$ 12,50</span></div>
-        <div class="item"><span>Gengibre</span><span class="preco">R$ 13,50</span></div>
-        <div class="item"><span>Jasmim</span><span class="preco">R$ 14,50</span></div>
-        <div class="item"><span>Maracujá</span><span class="preco">R$ 12,00</span></div>
-        <div class="item"><span>Frutas vermelhas</span><span class="preco">R$ 15,90</span></div>
+    <div class="grid">
+        <div class="item">Camomila
+            <div class="preco">R$ 12,90</div>
+        </div>
+        <div class="item">Hortelã
+            <div class="preco">R$ 11,90</div>
+        </div>
+        <div class="item">Hibisco
+            <div class="preco">R$ 13,90</div>
+        </div>
+        <div class="item">Chá Verde
+            <div class="preco">R$ 14,90</div>
+        </div>
+        <div class="item">Erva-doce
+            <div class="preco">R$ 10,90</div>
+        </div>
+        <div class="item">Capim-limão
+            <div class="preco">R$ 12,50</div>
+        </div>
+        <div class="item">Gengibre
+            <div class="preco">R$ 13,50</div>
+        </div>
+        <div class="item">Jasmim
+            <div class="preco">R$ 14,50</div>
+        </div>
+        <div class="item">Maracujá
+            <div class="preco">R$ 12,00</div>
+        </div>
+        <div class="item">Frutas Vermelhas
+            <div class="preco">R$ 15,90</div>
+        </div>
     </div>
 
     <footer>
-        📞 (48) 99999-1234 | 📧 contato@ecoviva.com
+        📞 (48) 99999-1234
     </footer>
 
 </body>

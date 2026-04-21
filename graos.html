@@ -20,12 +20,18 @@
             color: #163d2b;
         }
         
-        header {
+        nav {
             display: flex;
             justify-content: space-between;
             padding: 20px 60px;
             background: #1f5c3f;
             color: white;
+        }
+        
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
         }
         
         .hero {
@@ -35,24 +41,27 @@
             color: white;
         }
         
-        .menu {
-            max-width: 900px;
-            margin: 50px auto;
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+            justify-content: center;
         }
         
         .item {
-            display: flex;
-            justify-content: space-between;
-            padding: 18px;
-            margin-bottom: 10px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
         .preco {
             color: #2e7d32;
             font-weight: 600;
+            margin-top: 10px;
         }
         
         footer {
@@ -66,35 +75,60 @@
 
 <body>
 
-    <header>
+    <nav>
         <h2 onclick="location.href='index.html'" style="cursor:pointer;">🌿 EcoViva</h2>
-    </header>
+        <div>
+            <a href="chas.html">Chás</a>
+            <a href="graos.html">Grãos</a>
+            <a href="oleos.html">Óleos</a>
+        </div>
+    </nav>
 
     <section class="hero">
         <h1>Grãos Orgânicos</h1>
-        <p>Energia natural e nutrição de alta qualidade</p>
     </section>
 
-    <div class="menu">
-        <div class="item"><span>Aveia</span><span class="preco">R$ 9,90</span></div>
-        <div class="item"><span>Quinoa</span><span class="preco">R$ 14,90</span></div>
-        <div class="item"><span>Linhaça</span><span class="preco">R$ 8,90</span></div>
-        <div class="item"><span>Chia</span><span class="preco">R$ 12,90</span></div>
-        <div class="item"><span>Arroz Integral</span><span class="preco">R$ 7,90</span></div>
-        <div class="item"><span>Feijão Preto</span><span class="preco">R$ 6,90</span></div>
-        <div class="item"><span>Lentilha</span><span class="preco">R$ 10,90</span></div>
-        <div class="item"><span>Grão-de-bico</span><span class="preco">R$ 11,90</span></div>
-        <div class="item"><span>Amaranto</span><span class="preco">R$ 13,90</span></div>
-        <div class="item"><span>Cevada</span><span class="preco">R$ 9,50</span></div>
-        <div class="item"><span>Milho</span><span class="preco">R$ 5,90</span></div>
-        <div class="item"><span>Soja</span><span class="preco">R$ 7,50</span></div>
-        <div class="item"><span>Trigo Integral</span><span class="preco">R$ 8,50</span></div>
-        <div class="item"><span>Sementes de Girassol</span><span class="preco">R$ 12,00</span></div>
-        <div class="item"><span>Sementes de Abóbora</span><span class="preco">R$ 13,00</span></div>
+    <div class="grid">
+        <div class="item">Aveia
+            <div class="preco">R$ 9,90</div>
+        </div>
+        <div class="item">Quinoa
+            <div class="preco">R$ 14,90</div>
+        </div>
+        <div class="item">Lentilha
+            <div class="preco">R$ 10,90</div>
+        </div>
+        <div class="item">Grão-de-bico
+            <div class="preco">R$ 11,90</div>
+        </div>
+        <div class="item">Chia
+            <div class="preco">R$ 12,90</div>
+        </div>
+        <div class="item">Linhaça
+            <div class="preco">R$ 8,90</div>
+        </div>
+        <div class="item">Arroz Integral
+            <div class="preco">R$ 7,90</div>
+        </div>
+        <div class="item">Feijão Preto
+            <div class="preco">R$ 6,90</div>
+        </div>
+        <div class="item">Cevada
+            <div class="preco">R$ 9,50</div>
+        </div>
+        <div class="item">Amaranto
+            <div class="preco">R$ 13,90</div>
+        </div>
+        <div class="item">Milho
+            <div class="preco">R$ 5,90</div>
+        </div>
+        <div class="item">Soja
+            <div class="preco">R$ 7,50</div>
+        </div>
     </div>
 
     <footer>
-        📞 (48) 99999-1234 | 📧 contato@ecoviva.com
+        📞 (48) 99999-1234
     </footer>
 
 </body>

@@ -35,22 +35,23 @@
             color: white;
             text-decoration: none;
         }
+        /* HERO */
         
         .hero {
             height: 90vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             align-items: center;
             text-align: center;
             background: linear-gradient(135deg, #2e7d32, #66bb6a);
             color: white;
-            padding-top: 80px;
+            padding-top: 60px;
         }
         /* SEARCH */
         
         .search-container {
             position: relative;
+            margin-bottom: 20px;
         }
         
         .search-box {
@@ -100,14 +101,53 @@
         }
         
         .hero h1 {
-            margin-top: 30px;
             font-size: 48px;
+            margin-top: 20px;
         }
         
         .hero p {
             font-size: 20px;
             margin-top: 10px;
         }
+        /* CARDS */
+        
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 80px 40px;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            background: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        /* INTRO */
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .intro p {
+            color: #444;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        /* FOOTER */
         
         footer {
             background: #1f5c3f;
@@ -146,24 +186,45 @@
 
     </section>
 
+    <section class="cards">
+
+        <div class="card" onclick="location.href='chas.html'">
+            <h3>🍵 Chás Naturais</h3>
+            <p>Relaxamento e saúde em cada xícara</p>
+        </div>
+
+        <div class="card" onclick="location.href='graos.html'">
+            <h3>🌾 Grãos Orgânicos</h3>
+            <p>Nutrição completa e energia natural</p>
+        </div>
+
+        <div class="card" onclick="location.href='oleos.html'">
+            <h3>🌿 Óleos Naturais</h3>
+            <p>Cuidados naturais para corpo e mente</p>
+        </div>
+
+    </section>
+
+    <section class="intro">
+        <h2>Bem-vindo à EcoViva</h2>
+        <p>A EcoViva Naturais oferece produtos selecionados diretamente da natureza.</p>
+        <p>Trabalhamos com ingredientes naturais, focando em saúde, bem-estar e qualidade de vida.</p>
+        <p>Explore nossas categorias e descubra uma nova forma de viver melhor.</p>
+    </section>
+
     <footer>
-        📞 (48) 99999-1234
+        📞 (48) 99999-1234 | 📧 contato@ecoviva.com
     </footer>
 
     <script>
         const produtos = [
-            // CHÁS
             "Camomila", "Hortelã", "Hibisco", "Chá Verde", "Erva-doce", "Capim-limão", "Gengibre", "Jasmim", "Maracujá", "Frutas Vermelhas",
-
-            // GRÃOS
             "Aveia", "Quinoa", "Lentilha", "Grão-de-bico", "Chia", "Linhaça", "Arroz Integral", "Feijão Preto", "Cevada", "Amaranto", "Milho", "Soja",
-
-            // ÓLEOS
             "Óleo de Coco", "Óleo de Argan", "Óleo de Rícino", "Óleo de Amêndoas", "Óleo de Lavanda", "Óleo de Alecrim", "Óleo de Jojoba", "Óleo de Rosa Mosqueta", "Óleo de Eucalipto", "Óleo de Limão", "Óleo de Hortelã", "Óleo de Baunilha"
         ];
 
-        function normalizar(texto) {
-            return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        function normalizar(t) {
+            return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         }
 
         function parecido(a, b) {
@@ -185,10 +246,7 @@
                 return;
             }
 
-            let resultados = produtos.filter(produto => {
-                let p = normalizar(produto);
-                return parecido(p, inputNorm);
-            });
+            let resultados = produtos.filter(p => parecido(normalizar(p), inputNorm));
 
             if (resultados.length > 0) {
                 sugestoes.style.display = "block";

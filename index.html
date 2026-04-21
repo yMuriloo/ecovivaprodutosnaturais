@@ -35,8 +35,13 @@
             margin-left: 25px;
             color: white;
             text-decoration: none;
+            font-weight: 500;
         }
-        /* HERO FULL SCREEN */
+        
+        nav a:hover {
+            border-bottom: 2px solid #a5d6a7;
+        }
+        /* HERO */
         
         .hero {
             height: 90vh;
@@ -57,6 +62,34 @@
         .hero p {
             font-size: 22px;
             margin-top: 15px;
+        }
+        /* SEARCH */
+        
+        .search-box {
+            margin-top: 30px;
+            display: flex;
+        }
+        
+        .search-box input {
+            width: 320px;
+            padding: 12px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            outline: none;
+        }
+        
+        .search-box button {
+            padding: 12px 20px;
+            border: none;
+            background: #1f5c3f;
+            color: white;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .search-box button:hover {
+            background: #144c33;
         }
         /* CARDS */
         
@@ -85,7 +118,7 @@
         /* INTRO */
         
         .intro {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto 80px auto;
             text-align: center;
             padding: 0 20px;
@@ -125,6 +158,11 @@
     <section class="hero">
         <h1>Produtos Naturais Premium</h1>
         <p>Qualidade, saúde e bem-estar direto da natureza</p>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar produtos...">
+            <button onclick="buscarProduto()">🔍</button>
+        </div>
     </section>
 
     <section class="cards">
@@ -152,7 +190,7 @@
             A EcoViva Naturais é uma loja dedicada a oferecer produtos selecionados diretamente da natureza, com foco em qualidade, bem-estar e sustentabilidade.
         </p>
         <p>
-            Nossa loja é localizada em Contagem/MG, e trabalhamos com ingredientes naturais, livres de processos agressivos, proporcionando uma experiência saudável e equilibrada para o seu dia a dia.
+            Nossa loja é localizada em Contagem/MG, e trabalhamos com ingredientes naturais, livres de processos agressivos, proporcionando uma experiência saudável.
         </p>
         <p>
             Explore nossas categorias e descubra como é possível viver melhor com produtos naturais.
@@ -162,6 +200,22 @@
     <footer>
         📞 (48) 99999-1234 | 📧 contato@ecoviva.com
     </footer>
+
+    <script>
+        function buscarProduto() {
+            let busca = document.getElementById("searchInput").value.toLowerCase();
+
+            if (busca.includes("chá") || busca.includes("cha") || busca.includes("camomila") || busca.includes("hortelã")) {
+                window.location.href = "chas.html";
+            } else if (busca.includes("grão") || busca.includes("grao") || busca.includes("arroz") || busca.includes("feijão")) {
+                window.location.href = "graos.html";
+            } else if (busca.includes("óleo") || busca.includes("oleo") || busca.includes("coco") || busca.includes("argan")) {
+                window.location.href = "oleos.html";
+            } else {
+                alert("Produto não encontrado 😕");
+            }
+        }
+    </script>
 
 </body>
 

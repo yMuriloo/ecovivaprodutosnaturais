@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EcoViva Naturais</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #eef7f0;
+            color: #163d2b;
+        }
+        /* HEADER */
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            background: linear-gradient(to bottom, #1f5c3f, #2e7d32);
+            color: white;
+        }
+        /* HERO */
+        
+        .hero {
+            padding: 80px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            color: white;
+        }
+        
+        .hero img {
+            width: 350px;
+            border-radius: 15px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            /* AUMENTADO */
+            margin-top: 10px;
+        }
+        /* CARDS */
+        
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            width: 260px;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* INTRODUÇÃO */
+        
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .intro h2 {
+            margin-bottom: 15px;
+        }
+        
+        .intro p {
+            color: #444;
+            line-height: 1.6;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #1f5c3f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>🌿 EcoViva</h2>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Produtos Naturais Premium</h1>
+            <p>Qualidade, saúde e bem-estar direto da natureza</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443">
+    </section>
+
+    <section class="cards">
+
+        <div class="card" onclick="location.href='chas.html'">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+            <h3>Chás Naturais</h3>
+        </div>
+
+        <div class="card" onclick="location.href='graos.html'">
+            <img src="https://img.freepik.com/fotos-gratis/outras-leguminosas_53876-47070.jpg?semt=ais_hybrid&w=740&q=80">
+            <h3>Grãos Orgânicos</h3>
+        </div>
+
+        <div class="card" onclick="location.href='oleos.html'">
+            <img src="https://img.freepik.com/fotos-gratis/oleo-essencial-de-hortela-pimenta-engarrafado-com-hortelao-pimenta-verde-fresco_1150-38034.jpg?semt=ais_hybrid&w=740&q=80">
+            <h3>Óleos Naturais</h3>
+        </div>
+
+    </section>
+
+    <section class="intro">
+        <h2>Bem-vindo à EcoViva</h2>
+        <p>
+            A EcoViva Naturais é uma loja dedicada a oferecer produtos de alta qualidade, selecionados diretamente da natureza para promover saúde, bem-estar e equilíbrio. Trabalhamos com ingredientes naturais, livres de processos agressivos, garantindo mais qualidade
+            de vida para você e sua família.
+        </p>
+        <p>
+            Explore nossas categorias e descubra uma nova forma de cuidar do seu corpo e mente, com produtos que respeitam o meio ambiente e valorizam o natural.
+        </p>
+    </section>
+
+    <footer>
+        (48) 99999-1234 | 📧 contato@ecoviva.com
+    </footer>
+
+</body>
+
+</html>

@@ -35,11 +35,9 @@
             color: white;
             text-decoration: none;
         }
-        /* HERO (DIMINUÍDO) */
         
         .hero {
             height: 70vh;
-            /* antes era 90vh */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -48,7 +46,6 @@
             color: white;
             padding-top: 60px;
         }
-        /* SEARCH */
         
         .search-container {
             position: relative;
@@ -110,16 +107,13 @@
             font-size: 20px;
             margin-top: 10px;
         }
-        /* CARDS (SUBIDOS) */
         
         .cards {
             display: flex;
             justify-content: center;
             gap: 30px;
             padding: 40px 40px 80px 40px;
-            /* diminuiu espaço de cima */
             margin-top: -80px;
-            /* puxa os cards pra cima */
             flex-wrap: wrap;
         }
         
@@ -137,7 +131,6 @@
         .card:hover {
             transform: translateY(-8px);
         }
-        /* INTRO */
         
         .intro {
             max-width: 800px;
@@ -151,7 +144,6 @@
             margin-bottom: 10px;
             line-height: 1.7;
         }
-        /* FOOTER */
         
         footer {
             background: #1f5c3f;
@@ -221,10 +213,113 @@
     </footer>
 
     <script>
-        const produtos = [
-            "Camomila", "Hortelã", "Hibisco", "Chá Verde", "Erva-doce", "Capim-limão", "Gengibre", "Jasmim", "Maracujá", "Frutas Vermelhas",
-            "Aveia", "Quinoa", "Lentilha", "Grão-de-bico", "Chia", "Linhaça", "Arroz Integral", "Feijão Preto", "Cevada", "Amaranto", "Milho", "Soja",
-            "Óleo de Coco", "Óleo de Argan", "Óleo de Rícino", "Óleo de Amêndoas", "Óleo de Lavanda", "Óleo de Alecrim", "Óleo de Jojoba", "Óleo de Rosa Mosqueta", "Óleo de Eucalipto", "Óleo de Limão", "Óleo de Hortelã", "Óleo de Baunilha"
+        const produtos = [{
+                nome: "Camomila",
+                categoria: "chas"
+            }, {
+                nome: "Hortelã",
+                categoria: "chas"
+            }, {
+                nome: "Hibisco",
+                categoria: "chas"
+            }, {
+                nome: "Chá Verde",
+                categoria: "chas"
+            }, {
+                nome: "Erva-doce",
+                categoria: "chas"
+            }, {
+                nome: "Capim-limão",
+                categoria: "chas"
+            }, {
+                nome: "Gengibre",
+                categoria: "chas"
+            }, {
+                nome: "Jasmim",
+                categoria: "chas"
+            }, {
+                nome: "Maracujá",
+                categoria: "chas"
+            }, {
+                nome: "Frutas Vermelhas",
+                categoria: "chas"
+            },
+
+            {
+                nome: "Aveia",
+                categoria: "graos"
+            }, {
+                nome: "Quinoa",
+                categoria: "graos"
+            }, {
+                nome: "Lentilha",
+                categoria: "graos"
+            }, {
+                nome: "Grão-de-bico",
+                categoria: "graos"
+            }, {
+                nome: "Chia",
+                categoria: "graos"
+            }, {
+                nome: "Linhaça",
+                categoria: "graos"
+            }, {
+                nome: "Arroz Integral",
+                categoria: "graos"
+            }, {
+                nome: "Feijão Preto",
+                categoria: "graos"
+            }, {
+                nome: "Cevada",
+                categoria: "graos"
+            }, {
+                nome: "Amaranto",
+                categoria: "graos"
+            }, {
+                nome: "Milho",
+                categoria: "graos"
+            }, {
+                nome: "Soja",
+                categoria: "graos"
+            },
+
+            {
+                nome: "Óleo de Coco",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Argan",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Rícino",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Amêndoas",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Lavanda",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Alecrim",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Jojoba",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Rosa Mosqueta",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Eucalipto",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Limão",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Hortelã",
+                categoria: "oleos"
+            }, {
+                nome: "Óleo de Baunilha",
+                categoria: "oleos"
+            }
         ];
 
         function normalizar(t) {
@@ -250,7 +345,7 @@
                 return;
             }
 
-            let resultados = produtos.filter(p => parecido(normalizar(p), inputNorm));
+            let resultados = produtos.filter(p => parecido(normalizar(p.nome), inputNorm));
 
             if (resultados.length > 0) {
                 sugestoes.style.display = "block";
@@ -258,7 +353,12 @@
 
                 resultados.forEach(p => {
                     let div = document.createElement("div");
-                    div.innerText = p;
+                    div.innerText = p.nome;
+
+                    div.onclick = function() {
+                        window.location.href = p.categoria + ".html";
+                    };
+
                     sugestoes.appendChild(div);
                 });
 

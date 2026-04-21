@@ -31,35 +31,74 @@
             color: white;
         }
         
-        .nav-links a {
+        nav a {
             margin-left: 25px;
-            text-decoration: none;
             color: white;
-            font-weight: 500;
+            text-decoration: none;
         }
-        
-        .nav-links a:hover {
-            border-bottom: 2px solid #a5d6a7;
-        }
-        /* HERO */
+        /* HERO FULL SCREEN */
         
         .hero {
-            padding: 80px 60px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             background: linear-gradient(135deg, #2e7d32, #66bb6a);
             color: white;
-            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
         }
         
         .hero p {
-            font-size: 20px;
-            margin-top: 10px;
+            font-size: 22px;
+            margin-top: 15px;
+        }
+        /* CARDS */
+        
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 80px 40px;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            background: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
         }
         /* INTRO */
         
         .intro {
             max-width: 900px;
-            margin: 50px auto;
+            margin: 0 auto 80px auto;
             text-align: center;
+            padding: 0 20px;
+        }
+        
+        .intro h2 {
+            margin-bottom: 20px;
+        }
+        
+        .intro p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 10px;
         }
         /* FOOTER */
         
@@ -67,7 +106,7 @@
             background: #1f5c3f;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
         }
     </style>
 </head>
@@ -76,7 +115,7 @@
 
     <nav>
         <h2 onclick="location.href='index.html'" style="cursor:pointer;">🌿 EcoViva</h2>
-        <div class="nav-links">
+        <div>
             <a href="chas.html">Chás</a>
             <a href="graos.html">Grãos</a>
             <a href="oleos.html">Óleos</a>
@@ -88,10 +127,35 @@
         <p>Qualidade, saúde e bem-estar direto da natureza</p>
     </section>
 
+    <section class="cards">
+
+        <div class="card" onclick="location.href='chas.html'">
+            <h3>🍵 Chás Naturais</h3>
+            <p>Relaxamento e saúde em cada xícara</p>
+        </div>
+
+        <div class="card" onclick="location.href='graos.html'">
+            <h3>🌾 Grãos Orgânicos</h3>
+            <p>Nutrição completa e energia natural</p>
+        </div>
+
+        <div class="card" onclick="location.href='oleos.html'">
+            <h3>🌿 Óleos Naturais</h3>
+            <p>Cuidados naturais para corpo e mente</p>
+        </div>
+
+    </section>
+
     <section class="intro">
         <h2>Bem-vindo à EcoViva</h2>
         <p>
-            Trabalhamos com produtos naturais selecionados para promover saúde e equilíbrio. Navegue pelas categorias acima e descubra nossa linha completa.
+            A EcoViva Naturais é uma loja dedicada a oferecer produtos selecionados diretamente da natureza, com foco em qualidade, bem-estar e sustentabilidade.
+        </p>
+        <p>
+            Nossa loja é localizada em Contagem/MG, e trabalhamos com ingredientes naturais, livres de processos agressivos, proporcionando uma experiência saudável e equilibrada para o seu dia a dia.
+        </p>
+        <p>
+            Explore nossas categorias e descubra como é possível viver melhor com produtos naturais.
         </p>
     </section>
 

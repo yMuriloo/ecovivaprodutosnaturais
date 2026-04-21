@@ -35,11 +35,6 @@
             margin-left: 25px;
             color: white;
             text-decoration: none;
-            font-weight: 500;
-        }
-        
-        nav a:hover {
-            border-bottom: 2px solid #a5d6a7;
         }
         /* HERO */
         
@@ -47,26 +42,20 @@
             height: 90vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             text-align: center;
             background: linear-gradient(135deg, #2e7d32, #66bb6a);
             color: white;
-            padding: 20px;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-        }
-        
-        .hero p {
-            font-size: 22px;
-            margin-top: 15px;
+            padding-top: 80px;
         }
         /* SEARCH */
         
+        .search-container {
+            position: relative;
+        }
+        
         .search-box {
-            margin-top: 30px;
             display: flex;
         }
         
@@ -85,11 +74,47 @@
             color: white;
             border-radius: 0 25px 25px 0;
             cursor: pointer;
-            transition: 0.3s;
+        }
+        /* SUGESTÕES */
+        
+        .suggestions {
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            max-height: 200px;
+            overflow-y: auto;
         }
         
-        .search-box button:hover {
-            background: #144c33;
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .suggestions div:hover {
+            background: #e0f2e9;
+        }
+        /* MENSAGEM */
+        
+        .not-found {
+            margin-top: 10px;
+            color: #ffdddd;
+            display: none;
+        }
+        /* TITULO */
+        
+        .hero h1 {
+            margin-top: 30px;
+            font-size: 48px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
         }
         /* CARDS */
         
@@ -123,16 +148,6 @@
             text-align: center;
             padding: 0 20px;
         }
-        
-        .intro h2 {
-            margin-bottom: 20px;
-        }
-        
-        .intro p {
-            color: #444;
-            line-height: 1.7;
-            margin-bottom: 10px;
-        }
         /* FOOTER */
         
         footer {
@@ -156,13 +171,21 @@
     </nav>
 
     <section class="hero">
+
+        <!-- PESQUISA TOPO -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar produtos..." onkeyup="filtrar()">
+                <button>🔍</button>
+            </div>
+
+            <div id="suggestions" class="suggestions"></div>
+            <div id="notFound" class="not-found">Produto não encontrado 😕</div>
+        </div>
+
         <h1>Produtos Naturais Premium</h1>
         <p>Qualidade, saúde e bem-estar direto da natureza</p>
 
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Buscar produtos...">
-            <button onclick="buscarProduto()">🔍</button>
-        </div>
     </section>
 
     <section class="cards">
@@ -186,15 +209,7 @@
 
     <section class="intro">
         <h2>Bem-vindo à EcoViva</h2>
-        <p>
-            A EcoViva Naturais é uma loja dedicada a oferecer produtos selecionados diretamente da natureza, com foco em qualidade, bem-estar e sustentabilidade.
-        </p>
-        <p>
-            Nossa loja é localizada em Contagem/MG, e trabalhamos com ingredientes naturais, livres de processos agressivos, proporcionando uma experiência saudável.
-        </p>
-        <p>
-            Explore nossas categorias e descubra como é possível viver melhor com produtos naturais.
-        </p>
+        <p>Produtos naturais selecionados para sua saúde e bem-estar.</p>
     </section>
 
     <footer>
@@ -202,17 +217,39 @@
     </footer>
 
     <script>
-        function buscarProduto() {
-            let busca = document.getElementById("searchInput").value.toLowerCase();
+        const produtos = [
+            "Camomila", "Hortelã", "Hibisco", "Chá Verde",
+            "Aveia", "Quinoa", "Lentilha", "Arroz Integral",
+            "Óleo de Coco", "Óleo de Argan", "Óleo de Lavanda"
+        ];
 
-            if (busca.includes("chá") || busca.includes("cha") || busca.includes("camomila") || busca.includes("hortelã")) {
-                window.location.href = "chas.html";
-            } else if (busca.includes("grão") || busca.includes("grao") || busca.includes("arroz") || busca.includes("feijão")) {
-                window.location.href = "graos.html";
-            } else if (busca.includes("óleo") || busca.includes("oleo") || busca.includes("coco") || busca.includes("argan")) {
-                window.location.href = "oleos.html";
+        function filtrar() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let sugestoes = document.getElementById("suggestions");
+            let notFound = document.getElementById("notFound");
+
+            sugestoes.innerHTML = "";
+
+            if (input === "") {
+                sugestoes.style.display = "none";
+                notFound.style.display = "none";
+                return;
+            }
+
+            let resultados = produtos.filter(p => p.toLowerCase().includes(input));
+
+            if (resultados.length > 0) {
+                sugestoes.style.display = "block";
+                notFound.style.display = "none";
+
+                resultados.forEach(produto => {
+                    let div = document.createElement("div");
+                    div.innerText = produto;
+                    sugestoes.appendChild(div);
+                });
             } else {
-                alert("Produto não encontrado 😕");
+                sugestoes.style.display = "none";
+                notFound.style.display = "block";
             }
         }
     </script>

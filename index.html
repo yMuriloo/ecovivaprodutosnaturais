@@ -35,10 +35,11 @@
             color: white;
             text-decoration: none;
         }
-        /* HERO */
+        /* HERO (DIMINUÍDO) */
         
         .hero {
-            height: 90vh;
+            height: 70vh;
+            /* antes era 90vh */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -109,13 +110,16 @@
             font-size: 20px;
             margin-top: 10px;
         }
-        /* CARDS */
+        /* CARDS (SUBIDOS) */
         
         .cards {
             display: flex;
             justify-content: center;
             gap: 30px;
-            padding: 80px 40px;
+            padding: 40px 40px 80px 40px;
+            /* diminuiu espaço de cima */
+            margin-top: -80px;
+            /* puxa os cards pra cima */
             flex-wrap: wrap;
         }
         

@@ -72,7 +72,6 @@
             color: white;
             border-radius: 0 25px 25px 0;
         }
-        /* sugestões */
         
         .suggestions {
             position: absolute;
@@ -93,7 +92,6 @@
         .suggestions div:hover {
             background: #e0f2e9;
         }
-        /* mensagem */
         
         .not-found {
             margin-top: 10px;
@@ -109,25 +107,6 @@
         .hero p {
             font-size: 20px;
             margin-top: 10px;
-        }
-        /* resto */
-        
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 80px 40px;
-            flex-wrap: wrap;
-        }
-        
-        .card {
-            background: white;
-            width: 260px;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
         }
         
         footer {
@@ -173,19 +152,20 @@
 
     <script>
         const produtos = [
-        "Camomila", "Hortelã", "Hibisco", "Chá Verde", "Erva-doce", "Capim-limão", "Gengibre", "Jasmim", "Maracujá", "Frutas Vermelhas",
+            // CHÁS
+            "Camomila", "Hortelã", "Hibisco", "Chá Verde", "Erva-doce", "Capim-limão", "Gengibre", "Jasmim", "Maracujá", "Frutas Vermelhas",
 
-        "Aveia", "Quinoa", "Lentilha", "Grão-de-bico", "Chia", "Linhaça", "Arroz Integral", "Feijão Preto", "Cevada", "Amaranto", "Milho", "Soja",
+            // GRÃOS
+            "Aveia", "Quinoa", "Lentilha", "Grão-de-bico", "Chia", "Linhaça", "Arroz Integral", "Feijão Preto", "Cevada", "Amaranto", "Milho", "Soja",
 
-        "Óleo de Coco", "Óleo de Argan", "Óleo de Rícino", "Óleo de Amêndoas", "Óleo de Lavanda", "Óleo de Alecrim", "Óleo de Jojoba", "Óleo de Rosa Mosqueta", "Óleo de Eucalipto", "Óleo de Limão", "Óleo de Hortelã", "Óleo de Baunilha"
-        ];];
+            // ÓLEOS
+            "Óleo de Coco", "Óleo de Argan", "Óleo de Rícino", "Óleo de Amêndoas", "Óleo de Lavanda", "Óleo de Alecrim", "Óleo de Jojoba", "Óleo de Rosa Mosqueta", "Óleo de Eucalipto", "Óleo de Limão", "Óleo de Hortelã", "Óleo de Baunilha"
+        ];
 
-        // remove acento
         function normalizar(texto) {
             return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         }
 
-        // pequena tolerância (contém parte da palavra)
         function parecido(a, b) {
             return a.includes(b) || b.includes(a);
         }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Chás Naturais</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,31 +16,69 @@
         }
         
         body {
-            background: #eef7f0;
-            color: #163d2b;
+            background: #f1f3f2;
+            color: #1e2d27;
         }
         /* NAV */
         
         nav {
             display: flex;
             justify-content: space-between;
-            padding: 20px 60px;
-            background: #1f5c3f;
+            align-items: center;
+            padding: 20px 70px;
+            background: rgba(20, 50, 38, 0.98);
             color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav h2 {
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 20px;
         }
         
         nav a {
-            margin-left: 20px;
-            color: white;
+            margin-left: 30px;
+            color: #e0e0e0;
             text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #6fbf73;
+            bottom: -6px;
+            left: 0;
+            transition: 0.3s;
+        }
+        
+        nav a:hover {
+            color: white;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
         }
         /* HERO */
         
         .hero {
-            padding: 60px;
-            text-align: center;
-            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #183c2e, #2f6f4f);
             color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 600;
         }
         /* GRID */
         
@@ -48,30 +86,59 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            padding: 40px;
+            padding: 60px 40px 100px 40px;
             justify-content: center;
         }
         
         .item {
             background: white;
-            width: 220px;
+            width: 260px;
             padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e5e5;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+        }
+        
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+        /* IMAGEM */
+        
+        .img-produto {
+            width: 100%;
+            height: 140px;
+            background: #ddd;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        /* NOME */
+        
+        .nome-produto {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 500;
         }
         
         .preco {
-            color: #2e7d32;
+            color: #1e3a2f;
             font-weight: 600;
-            margin-top: 10px;
+            font-size: 15px;
         }
+        /* FOOTER */
         
         footer {
-            background: #1f5c3f;
-            color: white;
+            background: #143226;
+            color: #ccc;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -92,36 +159,67 @@
     </section>
 
     <div class="grid">
-        <div class="item">Camomila
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCgpA1dvKVTjP8aNtxAxiPnifhWp-1Ul1gew&s')"></div>
+            <span class="nome-produto">Camomila</span>
             <div class="preco">R$ 12,90</div>
         </div>
-        <div class="item">Hortelã
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://cdn.awsli.com.br/600x450/4/4552/produto/141272574/435c9b9f48.jpg')"></div>
+            <span class="nome-produto">Hortelã</span>
             <div class="preco">R$ 11,90</div>
         </div>
-        <div class="item">Hibisco
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://cdn.awsli.com.br/600x450/2672/2672806/produto/387130212/2-dfohwixbph.png')"></div>
+            <span class="nome-produto">Hibisco</span>
             <div class="preco">R$ 13,90</div>
         </div>
-        <div class="item">Chá Verde
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://cdn.awsli.com.br/600x450/4/4552/produto/254823/1afb79ecc7.jpg')"></div>
+            <span class="nome-produto">Chá Verde</span>
             <div class="preco">R$ 14,90</div>
         </div>
-        <div class="item">Erva-doce
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://cdn.awsli.com.br/600x450/4/4552/produto/48615/488dba7b11.jpg')"></div>
+            <span class="nome-produto">Erva-doce</span>
             <div class="preco">R$ 10,90</div>
         </div>
-        <div class="item">Capim-limão
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN3Iq9yxu9YSwFIg9Hze0XCjpzNEEKommZgQ&s')"></div>
+            <span class="nome-produto">Capim-limão</span>
             <div class="preco">R$ 12,50</div>
         </div>
-        <div class="item">Gengibre
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZH9tuESSa6vAJT-GiZLsJFYNCGbNSVQusgg&s')"></div>
+            <span class="nome-produto">Gengibre</span>
             <div class="preco">R$ 13,50</div>
         </div>
-        <div class="item">Jasmim
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://m.media-amazon.com/images/I/71c3cDzFNiL._AC_UF894,1000_QL80_.jpg')"></div>
+            <span class="nome-produto">Jasmim</span>
             <div class="preco">R$ 14,50</div>
         </div>
-        <div class="item">Maracujá
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7WG8-C1xlwjX-FzLUSRYHC-t99dIQ8OR7UA&s')"></div>
+            <span class="nome-produto">Maracujá</span>
             <div class="preco">R$ 12,00</div>
         </div>
-        <div class="item">Frutas Vermelhas
+
+        <div class="item">
+            <div class="img-produto" style="background-image:url('https://plenaprodutosnaturais.com.br/wp-content/uploads/2024/12/mixdefrutasvermelhas_nacaoverde.webp')"></div>
+            <span class="nome-produto">Frutas Vermelhas</span>
             <div class="preco">R$ 15,90</div>
         </div>
+
     </div>
 
     <footer>
